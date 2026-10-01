@@ -1,21 +1,28 @@
 import ContactForm from "@/components/ContactForm"
 import useInView from "@/hooks/useInView"
+import { useLanguage } from "@/i18n/languageContext"
+import TextRenderer from "./TextRenderer";
 
 export default function ContactMe(){
-    interface SocialLink {label: string, handle: string, icon: string, href?: string // sin href = no es un enlace (ej. Email)
+const {t} = useLanguage()
+    interface SocialLink {
+        key: 'github'| 'linkedin' |'email';
+        handle: string,
+        icon: string,
+        href?: string // sin href = no es un enlace (ej. Email)
 }
     const contactInView = useInView(0.1)
     const SOCIAL_LINKS: SocialLink[] = [
-      { label: 'GitHub', handle: '@akku', icon: '⌥', href: 'https://github.com/AkkuV2' },
-      { label: 'LinkedIn', handle: 'Ali Erazo', icon: '⌘', href: 'https://www.linkedin.com/in/ali-erazo-805181376/' },
-      { label: 'Email', handle: 'aalierazo@proton.me', icon: '✉' },
+      { key: 'github', handle: '@akku', icon: '⌥', href: 'https://github.com/AkkuV2' },
+      { key: 'linkedin', handle: 'Ali Erazo', icon: '⌘', href: 'https://www.linkedin.com/in/ali-erazo-805181376/' },
+      { key: 'email', handle: 'aalierazo@proton.me', icon: '✉' },
     ]
 
     return(
         <section id="contact" className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center" style={{ fontFamily: 'JetBrains Mono, monospace', color: '#4f9ab9' }}>
-          Contact me
+            {t.contact.title}
           </h2>
           <div
             ref={contactInView.ref}
@@ -33,12 +40,12 @@ export default function ContactMe(){
                   className="text-xl font-bold mb-4"
                   style={{ fontFamily: 'JetBrains Mono, monospace', color: '#4f9ab9' }}
                 >
-                  Social media
+                    {t.contact.socialMediaTitle}
                 </h3>
-                               <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-3">
                   {SOCIAL_LINKS.map((s) => (
                     <a
-                      key={s.label}
+                      key={s.key}
                       href={s.href}
                       {...(s.href && { target: '_blank', rel: 'noopener noreferrer' })}
                       className="flex items-center gap-4 rounded-xl px-5 py-4 transition-all duration-200"
@@ -67,7 +74,7 @@ export default function ContactMe(){
                       </span>
                       <div className="flex flex-col">
                         <span className="text-xs tracking-widest uppercase" style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}>
-                          {s.label}
+                            {t.contact.socialLabels[s.key]}
                         </span>
                         <span className="text-sm" style={{ color: '#e8e8f0' }}>{s.handle}</span>
                       </div>
@@ -81,7 +88,7 @@ export default function ContactMe(){
                 style={{ background: 'rgba(79,154,185,0.07)', border: '1px solid rgba(79,154,185,0.2)' }}
               >
                 <p className="text-sm leading-relaxed" style={{ color: '#9898a8' }}>
-                  Currently <span style={{ color: '#4f9ab9' }}>open to opportunities</span> — junior roles, freelance projects, or collaborative builds. Let's create something together.
+                    <TextRenderer fragments={t.contact.availability} />
                 </p>
               </div>
             </div>

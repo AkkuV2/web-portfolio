@@ -1,4 +1,3 @@
-import { useState} from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Skills from './components/Skills'
@@ -7,6 +6,8 @@ import Projects from './components/Projects'
 import Experience from './components/Experience'
 import Education from './components/Education'
 import ContactMe from './components/ContactMe'
+import Footer from './components/Footer'
+
 
 export default function App() {
   return (
@@ -41,12 +42,7 @@ export default function App() {
       <ContactMe/>
 
       {/* FOOTER */}
-      <footer
-        className="py-8 text-center text-xs"
-        style={{ borderTop: '1px solid rgba(79,154,185,0.12)', color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}
-      >
-        <span>© 2026 Ali Erazo — built with React &amp; Tailwind CSS</span>
-      </footer>
+      <Footer/>
     </div>
   )
 }

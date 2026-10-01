@@ -1,16 +1,18 @@
 // src/components/ContactForm.tsx
-import { useState } from "react";
+import { useState } from 'react';
+import { useLanguage } from '@/i18n/languageContext';
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validate = () => {
     const e: Record<string, string> = {};
-    if (!form.name.trim()) e.name = 'Name is required';
-    if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = 'Valid email required';
-    if (!form.message.trim()) e.message = 'Message is required';
+    if (!form.name.trim()) e.name = t.contactForm.errors.name;
+    if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) e.email = t.contactForm.errors.email;
+    if (!form.message.trim()) e.message = t.contactForm.errors.message;
     return e;
   };
 
@@ -25,7 +27,6 @@ export default function ContactForm() {
     setSent(true);
   };
 
-  //  Return condicional para el estado "enviado"
   if (sent) {
     return (
       <div
@@ -33,10 +34,13 @@ export default function ContactForm() {
         style={{ background: '#2e2d37', border: '1px solid #4f9ab9' }}
       >
         <span className="text-4xl">✓</span>
-        <p className="text-lg font-semibold" style={{ color: '#4f9ab9', fontFamily: 'JetBrains Mono, monospace' }}>
-          Message sent!
+        <p
+          className="text-lg font-semibold"
+          style={{ color: '#4f9ab9', fontFamily: 'JetBrains Mono, monospace' }}
+        >
+          {t.contactForm.sentTitle}
         </p>
-        <p className="text-sm" style={{ color: '#9898a8' }}>I'll get back to you soon.</p>
+        <p className="text-sm" style={{ color: '#9898a8' }}>{t.contactForm.sentSubtitle}</p>
         <button
           onClick={() => {
             setSent(false);
@@ -45,13 +49,12 @@ export default function ContactForm() {
           className="mt-2 text-sm underline"
           style={{ color: '#4f9ab9' }}
         >
-          Send another
+          {t.contactForm.sendAnother}
         </button>
       </div>
     );
   }
 
-  //  Return principal del formulario
   return (
     <form
       onSubmit={handleSubmit}
@@ -59,21 +62,24 @@ export default function ContactForm() {
       style={{ background: '#2e2d37', border: '1px solid #4f9ab9' }}
       noValidate
     >
+      {/* Nombre */}
       <div className="flex flex-col gap-1">
-        <label className="text-xs tracking-widest uppercase" style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}>
-          Name
+        <label
+          className="text-xs tracking-widest uppercase"
+          style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}
+        >
+          {t.contactForm.name}
         </label>
         <input
           type="text"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
-          placeholder="Ali Erazo"
+          placeholder={t.contactForm.namePlaceholder}
           className="rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200"
           style={{
             background: '#35343e',
             border: errors.name ? '1px solid #e05252' : '1px solid #4a4a58',
             color: '#e8e8f0',
-            fontFamily: 'Outfit, sans-serif',
           }}
           onFocus={(e) => (e.target.style.borderColor = '#4f9ab9')}
           onBlur={(e) => (e.target.style.borderColor = errors.name ? '#e05252' : '#4a4a58')}
@@ -81,21 +87,24 @@ export default function ContactForm() {
         {errors.name && <span className="text-xs" style={{ color: '#e05252' }}>{errors.name}</span>}
       </div>
 
+      {/* Email */}
       <div className="flex flex-col gap-1">
-        <label className="text-xs tracking-widest uppercase" style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}>
-          Email
+        <label
+          className="text-xs tracking-widest uppercase"
+          style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}
+        >
+          {t.contactForm.email}
         </label>
         <input
           type="email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
-          placeholder="you@email.com"
+          placeholder={t.contactForm.emailPlaceholder}
           className="rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200"
           style={{
             background: '#35343e',
             border: errors.email ? '1px solid #e05252' : '1px solid #4a4a58',
             color: '#e8e8f0',
-            fontFamily: 'Outfit, sans-serif',
           }}
           onFocus={(e) => (e.target.style.borderColor = '#4f9ab9')}
           onBlur={(e) => (e.target.style.borderColor = errors.email ? '#e05252' : '#4a4a58')}
@@ -103,21 +112,24 @@ export default function ContactForm() {
         {errors.email && <span className="text-xs" style={{ color: '#e05252' }}>{errors.email}</span>}
       </div>
 
+      {/* Mensaje */}
       <div className="flex flex-col gap-1">
-        <label className="text-xs tracking-widest uppercase" style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}>
-          Message
+        <label
+          className="text-xs tracking-widest uppercase"
+          style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}
+        >
+          {t.contactForm.message}
         </label>
         <textarea
           rows={5}
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
-          placeholder="Hi Ali, I'd love to work with you on..."
+          placeholder={t.contactForm.messagePlaceholder}
           className="rounded-lg px-4 py-3 text-sm outline-none transition-all duration-200 resize-none"
           style={{
             background: '#35343e',
             border: errors.message ? '1px solid #e05252' : '1px solid #4a4a58',
             color: '#e8e8f0',
-            fontFamily: 'Outfit, sans-serif',
           }}
           onFocus={(e) => (e.target.style.borderColor = '#4f9ab9')}
           onBlur={(e) => (e.target.style.borderColor = errors.message ? '#e05252' : '#4a4a58')}
@@ -134,7 +146,7 @@ export default function ContactForm() {
           fontFamily: 'JetBrains Mono, monospace',
         }}
       >
-        Send message
+        {t.contactForm.submit}
       </button>
     </form>
   );

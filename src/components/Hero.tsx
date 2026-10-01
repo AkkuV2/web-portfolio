@@ -1,10 +1,13 @@
 import useInView from '@/hooks/useInView'
+import { useLanguage } from '@/i18n/languageContext'
 import useScrambleCycle from '@/hooks/useScrambledCycle'
 
 
 export default function Hero(){
 const heroInView = useInView(0.1)
 const scrambledName = useScrambleCycle()
+const { t } = useLanguage();
+
     return(
     <section
             className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16"
@@ -24,19 +27,22 @@ const scrambledName = useScrambleCycle()
                 className="text-sm tracking-[0.25em] uppercase mb-4"
                 style={{ color: '#9898a8', fontFamily: 'JetBrains Mono, monospace' }}
               >
-                Are you looking for a
+              {t.hero.lookingFor}
               </p>
               <h1
                 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
                 style={{ fontFamily: 'JetBrains Mono, monospace', color: '#4f9ab9' }}
               >
-                Analyst &amp;<br />Software Developer?
+                {t.hero.titleLine1}
+                <br />
+                {t.hero.titleLine2}
               </h1>
               <p
                 className="text-lg md:text-xl mb-10"
                 style={{ color: '#e8e8f0' }}
               >
-                Hi, I'm <span style={{ color: '#4f9ab9', fontFamily: 'JetBrains Mono, monospace' }}>{scrambledName}.</span>
+                {t.hero.greeting}
+                <span style={{ color: '#4f9ab9', fontFamily: 'JetBrains Mono, monospace' }}>{scrambledName}.</span>
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a
