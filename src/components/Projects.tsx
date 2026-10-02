@@ -30,7 +30,19 @@ export default function Projects() {
             <div
               key={p.name}
               className="rounded-xl p-6"
-              style={{ background: '#2e2d37', border: '1px solid rgba(79,154,185,0.2)' }}
+              style={{
+                background: '#2e2d37',
+                border: '1px solid rgba(79,154,185,0.3)',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#4f9ab9';
+                e.currentTarget.style.boxShadow = '0 4px 32px rgba(79,154,185,0.15)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'rgba(79,154,185,0.3)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
               <h3
                 className="text-lg font-bold mb-2"

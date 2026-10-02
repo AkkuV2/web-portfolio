@@ -54,7 +54,7 @@ const { t } = useLanguage();
                     fontFamily: 'JetBrains Mono, monospace',
                   }}
                 >
-                  About me
+                    {t.nav.about}
                 </a>
                 <a
                   href="#experience"
@@ -74,7 +74,7 @@ const { t } = useLanguage();
                     el.style.background = 'transparent'
                   }}
                 >
-                  Experience
+                    {t.nav.experience}
                 </a>
               </div>
             </div>
