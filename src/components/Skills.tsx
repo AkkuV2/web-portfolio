@@ -4,7 +4,7 @@ import { useLanguage } from "@/i18n/languageContext"
 export default function Skills(){
 const FRONTEND_SKILLS = ['React', 'JavaScript', 'Razor', 'Tailwind CSS v4', 'CSS3 / HTML5']
 const BACKEND_SKILLS = ['PHP', 'C#', 'Python', 'ASP.NET', '.NET Core', 'Docker']
-const PLATFORM_SKILLS = ['GitHub', 'n8n', 'Cursor', 'Sigma', 'ClickUp', 'Claude AI', 'Deepseek']
+const PLATFORM_SKILLS = ['GitHub', 'n8n', 'Cursor', 'Figma', 'ClickUp', 'Claude AI', 'Deepseek']
 const {t} = useLanguage();
 
 return(
