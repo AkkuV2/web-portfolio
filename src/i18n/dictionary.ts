@@ -171,7 +171,7 @@ export const dictionary = {
         { lang: 'Español', level: 'Nativo' },
         { lang: 'Inglés', level: 'Intermedio — lectura y comunicación técnica' },
       ],
-      achievmentsTitle: 'Metas',
+      achievementsTitle: 'Logros',
       achievments: [
         'Facilité la incorporación de nuevos miembros al equipo de desarrollo mediante documentación técnica inicial.',
         'Desarrollé un prototipo funcional de chatbot para la gestión de consultas estudiantiles.',
@@ -333,7 +333,7 @@ export const dictionary = {
         { lang: 'Spanish', level: 'Native' },
         { lang: 'English', level: 'Intermediate — technical reading & communication' },
       ],
-      achievmentsTitle: 'achievments',
+      achievementsTitle: 'achievments',
       achievments: [
         'Facilitated the onboarding of new development team members through comprehensive initial documentation.',
         'Developed a functional chatbot prototype for student inquiries.',
