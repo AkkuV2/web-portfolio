@@ -20,7 +20,7 @@ export interface Translation {
     lookingFor: string;
     titlePrefix: string;
     titleWords:string[];
-    titleSuffix: string;
+    titleSuffix: string[];
     greeting: string;
     name: string;
   };
@@ -118,10 +118,9 @@ export const dictionary = {
 
     hero: {
       lookingFor: '¿Estás buscando un',
-      
-      titlePrefix: '¿Estás buscando un ', 
-      titleWords: ['Analista de software', 'Desarrollador de software', 'Arquitecto de software'],
-      titleSuffix: '?',
+      titlePrefix: '', 
+      titleWords: ['Analista', 'Desarrollador', 'Arquitecto'],
+      titleSuffix: [' de Software?'],
       greeting: 'Hola, soy ',
       name: 'Ali Erazo',
     },
@@ -282,8 +281,8 @@ export const dictionary = {
 
     hero: {
       lookingFor: 'Are you looking for',
-      titlePrefix: 'Are you looking for ',
-      titleWords: ['an Analyst', 'a Developer', 'an Architect'], 
+      titlePrefix: 'a Software ',
+      titleWords: ['Analyst', 'Developer', 'Architect'], 
       titleSuffix: '?',
       greeting: "Hi, I'm ",
       name: 'Ali Erazo'
