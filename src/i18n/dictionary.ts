@@ -22,6 +22,7 @@ export interface Translation {
     titleWords:string[];
     titleSuffix: string;
     greeting: string;
+    name: string;
   };
   skills: {
     title: string;
@@ -121,7 +122,8 @@ export const dictionary = {
       titlePrefix: '¿Estás buscando un ', 
       titleWords: ['Analista', 'Desarrollador', 'Arquitecto'],
       titleSuffix: '?',
-      greeting: 'Hola, soy Ali Erazo.',
+      greeting: 'Hola, soy ',
+      name: 'Ali Erazo',
     },
 
     skills: {
@@ -283,7 +285,8 @@ export const dictionary = {
       titlePrefix: 'Are you looking for ',
       titleWords: ['an Analyst', 'a Developer', 'an Architect'], 
       titleSuffix: '?',
-      greeting: "Hi, I'm Ali Erazo.",
+      greeting: "Hi, I'm ",
+      name: 'Ali Erazo'
     },
 
     skills: {

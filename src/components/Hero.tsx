@@ -48,6 +48,7 @@ export default function Hero() {
           style={{ color: '#e8e8f0' }}
         >
           {t.hero.greeting}
+          <span style={{ color: '#4f9ab9', fontFamily: 'JetBrains Mono, monospace' }}>{t.hero.name}.</span>
         </p>
 
         {/* Botones */}
