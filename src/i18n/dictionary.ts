@@ -120,7 +120,7 @@ export const dictionary = {
       lookingFor: '¿Estás buscando un',
       
       titlePrefix: '¿Estás buscando un ', 
-      titleWords: ['Analista', 'Desarrollador', 'Arquitecto'],
+      titleWords: ['Analista de software', 'Desarrollador de software', 'Arquitecto de software'],
       titleSuffix: '?',
       greeting: 'Hola, soy ',
       name: 'Ali Erazo',
