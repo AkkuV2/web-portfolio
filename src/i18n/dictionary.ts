@@ -18,8 +18,9 @@ export interface Translation {
   };
   hero: {
     lookingFor: string;
-    titleLine1: string;
-    titleLine2: string;
+    titlePrefix: string;
+    titleWords:string[];
+    titleSuffix: string;
     greeting: string;
   };
   skills: {
@@ -37,8 +38,8 @@ export interface Translation {
     softSkills: string[];
     languagesTitle: string;
     languages: { lang: string; level: string }[];
-    goalsTitle: string;
-    goals: string[];
+    achievementsTitle: string;
+    achievments: string[];
   };
   projects: {
     title: string;
@@ -78,6 +79,7 @@ export interface Translation {
       github: string;
       linkedin: string;
       email: string;
+      phone: string;
     };
   };
   contactForm: {
@@ -115,9 +117,11 @@ export const dictionary = {
 
     hero: {
       lookingFor: '¿Estás buscando un',
-      titleLine1: 'Analista &',
-      titleLine2: 'Desarrollador de Software?',
-      greeting: 'Hola, soy ',
+      
+      titlePrefix: '¿Estás buscando un ', 
+      titleWords: ['Analista', 'Desarrollador', 'Arquitecto'],
+      titleSuffix: '?',
+      greeting: 'Hola, soy Ali Erazo.',
     },
 
     skills: {
@@ -167,14 +171,13 @@ export const dictionary = {
         { lang: 'Español', level: 'Nativo' },
         { lang: 'Inglés', level: 'Intermedio — lectura y comunicación técnica' },
       ],
-      goalsTitle: 'Metas',
-      goals: [
-        'Construir proyectos sostenibles a largo plazo',
-        'Aprender programación continuamente',
-        'Asumir nuevos desafíos que no he enfrentado antes',
-        'Crecer profesionalmente dentro del sector IT',
-        'Desarrollar aplicaciones funcionales para el uso diario',
-        'Satisfacer las necesidades del usuario',
+      achievmentsTitle: 'Metas',
+      achievments: [
+        'Facilité la incorporación de nuevos miembros al equipo de desarrollo mediante documentación técnica inicial.',
+        'Desarrollé un prototipo funcional de chatbot para la gestión de consultas estudiantiles.',
+        'Entregué una interfaz en React para la gestión de atención virtual.',
+        'Elaboré guías fundamentales sobre herramientas como Git para optimizar la curva de aprendizaje de mis compañeros.',
+        'Realice una presentacion sobre buenas prácticas de programación, enfocándome en el patrón Early Return.',
       ],
     },
 
@@ -219,8 +222,8 @@ export const dictionary = {
           type: 'Programa Tecnológico',
           highlights: [
             'Formación en análisis, diseño y construcción de software.',
-            'Desarrollo de aplicaciones web con enfoque en buenas prácticas de programación.',
-            'Gestión de bases de datos relacionales y no relacionales, control de versiones y despliegue.',
+            'Desarrollo de aplicaciones web con enfoque en buenas prácticas de programación utilizando PHP, MySQL y Apache.',
+            'Gestión de bases de datos relacionales y no relacionales como PostgreSQL y MongoDB, control de versiones con Git y despliegue.',
           ],
         },
       ],
@@ -238,6 +241,7 @@ export const dictionary = {
         github: 'GitHub',
         linkedin: 'LinkedIn',
         email: 'Correo',
+        phone: 'Whatsapp',
       },
     },
 
@@ -275,10 +279,11 @@ export const dictionary = {
     },
 
     hero: {
-      lookingFor: 'Are you looking for a',
-      titleLine1: 'Analyst &',
-      titleLine2: 'Software Developer?',
-      greeting: "Hi, I'm ",
+      lookingFor: 'Are you looking for',
+      titlePrefix: 'Are you looking for ',
+      titleWords: ['an Analyst', 'a Developer', 'an Architect'], 
+      titleSuffix: '?',
+      greeting: "Hi, I'm Ali Erazo.",
     },
 
     skills: {
@@ -328,14 +333,13 @@ export const dictionary = {
         { lang: 'Spanish', level: 'Native' },
         { lang: 'English', level: 'Intermediate — technical reading & communication' },
       ],
-      goalsTitle: 'Goals',
-      goals: [
-        'Build sustainable long-term projects',
-        'Continuously learn programming',
-        'Take on new challenges I have not faced before',
-        'Grow professionally within the IT sector',
-        'Develop functional applications for everyday use',
-        'Meet user needs',
+      achievmentsTitle: 'achievments',
+      achievments: [
+        'Facilitated the onboarding of new development team members through comprehensive initial documentation.',
+        'Developed a functional chatbot prototype for student inquiries.',
+        'Delivered a React-based view for virtual support management.',
+        'Created foundational guides on tools like Git to streamline the learning curve for my classmates.',
+        'Delivered a presentation on programming best practices, specifically focusing on the Early Return pattern.',
       ],
     },
 
@@ -380,8 +384,8 @@ export const dictionary = {
           type: 'Technological Program',
           highlights: [
             'Training in software analysis, design, and construction.',
-            'Development of web applications with a focus on programming best practices.',
-            'Management of relational and non-relational databases, version control, and deployment.',
+            'Development of web applications with a focus on programming best practices using PHP, MySQL, and Apache.',
+            'Management of relational and non-relational databases such as PostgreSQL and MongoDB, version control with Git, and deployment.',
           ],
         },
       ],
@@ -399,6 +403,7 @@ export const dictionary = {
         github: 'GitHub',
         linkedin: 'LinkedIn',
         email: 'Email',
+        phone: 'Whatsapp',
       },
     },
 

@@ -43,7 +43,7 @@ export default function AboutMe() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col gap-3 text-sm leading-relaxed" style={{ color: '#c8c8d8' }}>
+              <div className="flex flex-col gap-3 text-sm text-justify leading-relaxed" style={{ color: '#c8c8d8' }}>
                 {t.about.bio.map((paragraph, pIndex) => (
                   <p key={pIndex}>
                     <TextRenderer fragments={paragraph} />
@@ -148,10 +148,10 @@ export default function AboutMe() {
                 className="text-xs font-bold tracking-widest uppercase block mb-4"
                 style={{ color: '#4f9ab9', fontFamily: 'JetBrains Mono, monospace' }}
               >
-                {t.about.goalsTitle}
+                {t.about.achievementsTitle}
               </span>
               <ul className="flex flex-col gap-3">
-                {t.about.goals.map((g) => (
+                {t.about.achievments.map((g) => (
                   <li key={g} className="flex gap-3 text-sm leading-snug" style={{ color: '#c8c8d8' }}>
                     <span style={{ color: '#4f9ab9', flexShrink: 0, marginTop: '3px' }}>→</span>
                     {g}

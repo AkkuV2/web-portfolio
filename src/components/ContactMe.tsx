@@ -6,7 +6,7 @@ import TextRenderer from "./TextRenderer";
 export default function ContactMe(){
 const {t} = useLanguage()
     interface SocialLink {
-        key: 'github'| 'linkedin' |'email';
+        key: 'github'| 'linkedin' |'email' | 'phone';
         handle: string,
         icon: string,
         href?: string // sin href = no es un enlace (ej. Email)
@@ -16,6 +16,7 @@ const {t} = useLanguage()
       { key: 'github', handle: '@akku', icon: '⌥', href: 'https://github.com/AkkuV2' },
       { key: 'linkedin', handle: 'Ali Erazo', icon: '⌘', href: 'https://www.linkedin.com/in/ali-erazo-805181376/' },
       { key: 'email',    handle: 'aalierazo@proton.me', icon: '✉', href: 'mailto:aalierazo@proton.me' },
+      { key: 'phone',    handle: '(+57) 3004492605', icon: '☎', href: 'https://wa.me/573004492605' }, 
     ]
 
     return(

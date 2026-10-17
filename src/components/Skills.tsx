@@ -2,9 +2,9 @@ import SkillCard from "./SkillCard"
 import { useLanguage } from "@/i18n/languageContext"
 
 export default function Skills(){
-const FRONTEND_SKILLS = ['React', 'JavaScript', 'Razor', 'Tailwind CSS v4', 'CSS3 / HTML5']
-const BACKEND_SKILLS = ['PHP', 'C#', 'Python', 'ASP.NET', '.NET Core', 'Docker']
-const PLATFORM_SKILLS = ['GitHub', 'n8n', 'Cursor', 'Figma', 'ClickUp', 'Claude AI', 'Deepseek']
+const FRONTEND_SKILLS = ['React', 'JavaScript', 'Razor', 'Tailwind CSS v4', 'CSS3 / HTML5', 'AlpineJS', 'SweetAlert2']
+const BACKEND_SKILLS = ['PHP', 'C#', 'ASP.NET', '.NET Core', 'Docker' , 'SQL' , 'NoSQL', 'AJAX']
+const PLATFORM_SKILLS = ['GitHub', 'n8n', 'AppFlowy', 'Figma', 'ClickUp', 'Claude AI', 'Deepseek']
 const {t} = useLanguage();
 
 return(
