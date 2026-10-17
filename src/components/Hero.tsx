@@ -36,7 +36,6 @@ export default function Hero() {
           className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           style={{ fontFamily: 'JetBrains Mono, monospace', color: '#4f9ab9' }}
         >
-          {t.hero.titlePrefix}
           {/* El span con el rol animado conserva el color, pero resalta la animación */}
           <span style={{ color: '#6ab8d4' }}>{scrambledRole}</span>
           {t.hero.titleSuffix}
