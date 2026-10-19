@@ -1,4 +1,4 @@
-import ContactForm from "@/components/ContactForm"
+import ResumeCard from "./ResumeCard";
 import useInView from "@/hooks/useInView"
 import { useLanguage } from "@/i18n/languageContext"
 import TextRenderer from "./TextRenderer";
@@ -33,7 +33,7 @@ const {t} = useLanguage()
               transform: contactInView.inView ? 'translateY(0)' : 'translateY(24px)',
             }}
           >
-            <ContactForm />
+            <ResumeCard/>
 
             <div className="flex flex-col gap-6">
               <div>

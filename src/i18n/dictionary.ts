@@ -83,22 +83,11 @@ export interface Translation {
       phone: string;
     };
   };
-  contactForm: {
-    name: string;
-    namePlaceholder: string;
-    email: string;
-    emailPlaceholder: string;
-    message: string;
-    messagePlaceholder: string;
-    submit: string;
-    sentTitle: string;
-    sentSubtitle: string;
-    sendAnother: string;
-    errors: {
-      name: string;
-      email: string;
-      message: string;
-    };
+  resumeCard: {
+    invitation: string;
+    textInvitation1: string;
+    resumeDescription: string[];
+    buttonText: string;
   };
   footer: {
     text: string;
@@ -245,24 +234,12 @@ export const dictionary = {
         phone: 'Whatsapp',
       },
     },
-
-    contactForm: {
-      name: 'Nombre',
-      namePlaceholder: 'Ali Erazo',
-      email: 'Correo',
-      emailPlaceholder: 'tu@email.com',
-      message: 'Mensaje',
-      messagePlaceholder: 'Hola Ali, me gustaría trabajar contigo en...',
-      submit: 'Enviar mensaje',
-      sentTitle: '¡Mensaje enviado!',
-      sentSubtitle: 'Te responderé pronto.',
-      sendAnother: 'Enviar otro',
-      errors: {
-        name: 'El nombre es obligatorio',
-        email: 'Se requiere un correo válido',
-        message: 'El mensaje es obligatorio',
+    resumeCard: {
+        invitation: '¿Quieres saber mas?',
+        textInvitation1: 'Descarga mi CV para leer mas sobre mi experiencia, Educación, habilidades tecnicas y mi perfil profesional.',
+        resumeDescription: ['Documento PDF', 'Perfil actualizado', 'Español'],
+        buttonText: 'DESCARGAR CV',
       },
-    },
 
     footer: {
       text: '© 2026 Ali Erazo — construido con React & Tailwind CSS',
@@ -409,23 +386,12 @@ export const dictionary = {
       },
     },
 
-    contactForm: {
-      name: 'Name',
-      namePlaceholder: 'Ali Erazo',
-      email: 'Email',
-      emailPlaceholder: 'you@email.com',
-      message: 'Message',
-      messagePlaceholder: "Hi Ali, I'd love to work with you on...",
-      submit: 'Send message',
-      sentTitle: 'Message sent!',
-      sentSubtitle: "I'll get back to you soon.",
-      sendAnother: 'Send another',
-      errors: {
-        name: 'Name is required',
-        email: 'Valid email required',
-        message: 'Message is required',
+    resumeCard: {
+        invitation: 'Want to know more?',
+        textInvitation1: 'Download my CV to learn more about my experience, education, technical skills, and professional profile.',
+        buttonText: 'DOWNLOAD CV',
+        resumeDescription: ['PDF document', 'Updated profile', 'English'],
       },
-    },
 
     footer: {
       text: '© 2026 Ali Erazo — built with React & Tailwind CSS',
