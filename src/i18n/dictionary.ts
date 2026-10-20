@@ -236,7 +236,7 @@ export const dictionary = {
     },
     resumeCard: {
         invitation: '¿Quieres saber mas?',
-        textInvitation1: 'Descarga mi CV para leer mas sobre mi experiencia, Educación, habilidades tecnicas y mi perfil profesional.',
+        textInvitation1: 'Descarga mi CV para leer mas sobre mi experiencia, educación, habilidades tecnicas y mi perfil profesional.',
         resumeDescription: ['Documento PDF', 'Perfil actualizado', 'Español'],
         buttonText: 'DESCARGAR CV',
       },
