@@ -1,6 +1,7 @@
-// src/components/Projects.tsx
 import useInView from '@/hooks/useInView';
 import { useLanguage } from '@/i18n/languageContext';
+
+const PROJECT_URL = 'https://carguard.onrender.com';
 
 export default function Projects() {
   const projectsInView = useInView(0.1);
@@ -27,13 +28,18 @@ export default function Projects() {
           }}
         >
           {t.projects.items.map((p) => (
-            <div
+            <a
               key={p.name}
-              className="rounded-xl p-6"
+              href={PROJECT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl p-6 block"
               style={{
                 background: '#2e2d37',
                 border: '1px solid rgba(79,154,185,0.3)',
                 transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
+                textDecoration: 'none',
+                color: 'inherit',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = '#4f9ab9';
@@ -66,7 +72,7 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
