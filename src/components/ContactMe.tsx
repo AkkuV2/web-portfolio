@@ -14,7 +14,7 @@ const {t} = useLanguage()
     const contactInView = useInView(0.1)
     const SOCIAL_LINKS: SocialLink[] = [
       { key: 'github', handle: '@akku', icon: '⌥', href: 'https://github.com/AkkuV2' },
-      { key: 'linkedin', handle: 'Ali Erazo', icon: '⌘', href: 'https://www.linkedin.com/in/ali-erazo-805181376/' },
+      { key: 'linkedin', handle: 'Ali Erazo', icon: '⌘', href: 'https://www.linkedin.com/in/ali-erazo-8346ba449/' },
       { key: 'email',    handle: 'aalierazo@proton.me', icon: '✉', href: 'mailto:aalierazo@proton.me' },
       { key: 'phone',    handle: '(+57) 3004492605', icon: '☎', href: 'https://wa.me/573004492605' }, 
     ]
