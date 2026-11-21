@@ -1,4 +1,4 @@
-import resumePDF from '@/assets/curriculum_ATS_Ali_Erazo-1.pdf'
+import resumePDF from '@/assets/curriculum_ATS_Ali_Erazo.pdf'
 import { useLanguage } from '@/i18n/languageContext'
 
 export default function ResumeCard() {
